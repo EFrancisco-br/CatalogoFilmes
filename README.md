@@ -1,6 +1,6 @@
 CATÁLOGO DE FILMES
 
- Aplicação Java para manutençãop de cadastro e localizar filmes
+ Aplicação Java para manutenção de cadastro e localizar filmes
  em uma base de dados gerada em tempo de execução
  
  PROGRAMA 50+ ADA & NÚCLEA
