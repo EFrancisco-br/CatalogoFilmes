@@ -1,4 +1,5 @@
 package Catalogo;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +7,7 @@ import java.util.List;
 public class Filme {
 
     String nome;
-    String dataLancamento;
+    LocalDate dataLancamento;
     String orcamento;
     String descricao;
     List<Diretor> diretoresDoFilme = new ArrayList<>();
@@ -15,14 +16,14 @@ public class Filme {
     Filme(){
 
     }
-    Filme(String nome, String dataLancamento, String orcamento, String descricao){
+    Filme(String nome, LocalDate dataLancamento, String orcamento, String descricao){
         this.nome = nome;
         this.dataLancamento = dataLancamento;
         this.orcamento = orcamento;
         this.descricao = descricao;
     }
 
-    Filme(String nome, String dataLancamento, String orcamento, String descricao, Diretor[] diretoresDoFilme, Ator[] atoresDoFilme){
+    Filme(String nome, LocalDate dataLancamento, String orcamento, String descricao, Diretor[] diretoresDoFilme, Ator[] atoresDoFilme){
         this.nome = nome;
         this.dataLancamento = dataLancamento;
         this.orcamento = orcamento;

@@ -7,10 +7,10 @@
  *********************************************************/
 
 package Catalogo;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.time.LocalDate;
 
 public class Catalogo {
 
@@ -24,48 +24,48 @@ public class Catalogo {
 
         //======================================================================================================================
         // popula dados
-        Ator ator1 = new Ator("Sam Worthington", "02/08/1976", "Australiano");
+        Ator ator1 = new Ator("Sam Worthington", LocalDate.of(1976, 8, 2), "Australiano");
         atores.add(ator1);
-        Ator ator2 = new Ator("Zoe Saldana", "19/06/1978", "Norte-americana");
+        Ator ator2 = new Ator("Zoe Saldana", LocalDate.of(1978, 6, 19), "Norte-americana");
         atores.add(ator2);
-        Ator ator3 = new Ator("Sigourney Weaver", "08/10/1979", "Norte-americana" );
+        Ator ator3 = new Ator("Sigourney Weaver", LocalDate.of(1979, 10, 8), "Norte-americana" );
         atores.add(ator3);
-        Ator ator4 = new Ator("Kate Winslet", "05/10/1975", "Britânica");
+        Ator ator4 = new Ator("Kate Winslet", LocalDate.of(1975, 10, 5), "Britânica");
         atores.add(ator4);
-        Ator ator5 = new Ator("Laura Dern", "10/02/1967", "Norte-americana");
+        Ator ator5 = new Ator("Laura Dern", LocalDate.of(1967,2,10), "Norte-americana");
         atores.add(ator5);
-        Ator ator6 = new Ator("Jeff Goldblum", "22/10/1952", "Norte-americana" );
+        Ator ator6 = new Ator("Jeff Goldblum", LocalDate.of(1952, 10, 22), "Norte-americana" );
         atores.add(ator6);
-        Ator ator7 = new Ator("Sam Neill", "14/09/1947", "Neozelandês");
+        Ator ator7 = new Ator("Sam Neill", LocalDate.of(1947,9,14), "Neozelandês");
         atores.add(ator7);
-        Ator ator8 = new Ator("Leonardo DiCaprio", "11/11/1974", "Norte-americano");
+        Ator ator8 = new Ator("Leonardo DiCaprio", LocalDate.of(1974,11,11), "Norte-americano");
         atores.add(ator8);
-        Diretor diretor1 = new Diretor("James Cameron", "16/08/1954", "Canadense");
+        Diretor diretor1 = new Diretor("James Cameron", LocalDate.of(1954,8,16), "Canadense");
         diretores.add(diretor1);
-        Diretor diretor2 = new Diretor("Juan Antônio Garcia Bayona", "09/05/1975", "Espanhol");
+        Diretor diretor2 = new Diretor("Juan Antônio Garcia Bayona", LocalDate.of(1975,5,9), "Espanhol");
         diretores.add(diretor2);
-        Diretor diretor3 = new Diretor("Colin Trevorrow", "13/09/1976", "Norte-americano");
+        Diretor diretor3 = new Diretor("Colin Trevorrow", LocalDate.of(1976,9,13), "Norte-americano");
         diretores.add(diretor3);
-        Diretor diretor4 = new Diretor("Steven Spielberg", "18/12/1949", "Norte-americano");
+        Diretor diretor4 = new Diretor("Steven Spielberg", LocalDate.of(1949,12,18), "Norte-americano");
         diretores.add(diretor4);
-        Diretor diretor5 = new Diretor("Joe Johnston", "13/05/1950", "Norte-americano");
+        Diretor diretor5 = new Diretor("Joe Johnston", LocalDate.of(1950,5,13), "Norte-americano");
         diretores.add(diretor5);
 
         Ator[] atoresAvatar = {ator1, ator2, ator3, ator4};
         Diretor[] diretoresAvatar = {diretor1};
-        Filme filmeAvatar = new Filme("Avatar", "18/12/2009", "$237.000.000,00 USD",
+        Filme filmeAvatar = new Filme("Avatar", LocalDate.of(2009,12,18), "$237.000.000,00 USD",
                 "No mundo alienígena de Pandora seres azuis vivem em harmonia até que...", diretoresAvatar, atoresAvatar);
         filmes.add(filmeAvatar);
 
         Ator[] atoresJurassic = {ator5, ator6, ator7};
         Diretor[] diretoresJurassic = {diretor2, diretor3, diretor4, diretor5 };
-        Filme filmeJurassic = new Filme("Jurassic Park", "25/06/1993", "$63.000.000,00 USD",
+        Filme filmeJurassic = new Filme("Jurassic Park", LocalDate.of(1993,6,25), "$63.000.000,00 USD",
                 "Parque temático habitado por dinossauros famintos.", diretoresJurassic, atoresJurassic);
         filmes.add(filmeJurassic);
 
         Ator[] atoresTitanic = {ator4, ator8};
         Diretor[] diretoresTitanic = {diretor1};
-        Filme filmeTitanic = new Filme("Titanic", "16/01/1998", "$200.000.000,00 USD",
+        Filme filmeTitanic = new Filme("Titanic", LocalDate.of(1998,1,16), "$200.000.000,00 USD",
                 "O barco afundou....", diretoresTitanic, atoresTitanic);
         filmes.add(filmeTitanic);
         //======================================================================================================================
@@ -109,8 +109,8 @@ public class Catalogo {
                     System.out.println("+----------------------+");
                     System.out.print("Nome do filme: ");
                     filme.nome = dados.nextLine();
-                    System.out.print("Data de lançamento: ");
-                    filme.dataLancamento = dados.nextLine();
+                    System.out.print("Data de lançamento (AAAA-MM-DD): ");
+                    filme.dataLancamento = LocalDate.parse(dados.nextLine());
                     System.out.print("Orçamento: ");
                     filme.orcamento = dados.nextLine();
                     System.out.print("Sinopse do filme: ");
@@ -131,8 +131,8 @@ public class Catalogo {
                     System.out.println("+---------------------+");
                     System.out.print("Nome do(a) ator(iz): ");
                     ator.nome = dados.nextLine();
-                    System.out.print("Nascimento: ");
-                    ator.nascimento = dados.nextLine();
+                    System.out.print("Nascimento (AAAA-MM-DD): ");
+                    ator.nascimento = LocalDate.parse(dados.nextLine());
                     System.out.print("Nacionalidade: ");
                     ator.nacionalidade = dados.nextLine();
                     atores.add(ator);
@@ -148,8 +148,8 @@ public class Catalogo {
                     System.out.println("+------------------------+");
                     System.out.print("Nome do(a) diretor(a): ");
                     diretor.nome = dados.nextLine();
-                    System.out.print("Nascimento: ");
-                    diretor.nascimento = dados.nextLine();
+                    System.out.print("Nascimento (AAAA-MM-DD): ");
+                    diretor.nascimento = LocalDate.parse(dados.nextLine());
                     System.out.print("Nacionalidade: ");
                     diretor.nacionalidade = dados.nextLine();
                     diretores.add(diretor);

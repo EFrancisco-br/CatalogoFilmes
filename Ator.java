@@ -1,14 +1,13 @@
 package Catalogo;
-
+import java.time.LocalDate;
 public class Ator extends Pessoa {
 
     Ator(){
 
     }
-    Ator(String nome, String nascimento, String nacionalidade){
-        this.nome = nome;
-        this.nascimento = nascimento;
-        this.nacionalidade = nacionalidade;
+    Ator(String nome, LocalDate nascimento, String nacionalidade){
+        super (nome,nascimento, nacionalidade);
+
     }
 
 }
